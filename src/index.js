@@ -497,9 +497,12 @@ const { getLatestBlockNumber } = require("./network");
 
 (async () => {
   try {
+       const branch = github.context.ref,
+        const author = github.context.actor,
     const attempt = process.env.GITHUB_RUN_ATTEMPT
     console.log("Job:", github.context.job);
-    console.log("Attempt Number:", attempt);
+    console.log("Attempt Number:", attempt,  branch, author);
+    
   } catch (error) {
     // let deploymentNotificationData = {
     //   status: "failed",

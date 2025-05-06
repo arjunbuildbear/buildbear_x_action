@@ -40732,9 +40732,11 @@ const { getLatestBlockNumber } = __nccwpck_require__(799);
 
 (async () => {
   try {
-    const attempt = process.env.GITHUB_RUN_ATTEMPT
-    console.log("Job:", github.context.job);
-    console.log("Attempt Number:", attempt);
+
+console.log( github.context.ref)
+console.log(github.context.actor)
+
+    
   } catch (error) {
     // let deploymentNotificationData = {
     //   status: "failed",
